@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Esrat Jahan — Software Engineer</title>
+<meta name="description" content="Esrat Jahan — Senior Software Engineer building Laravel/PHP enterprise systems on Oracle for insurance, with Python and machine-learning experience.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%23c8f542'/><text x='16' y='22' font-size='15' font-family='monospace' font-weight='700' fill='%23111' text-anchor='middle'>EJ</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0e0f11; --panel:#16181c; --panel2:#1c1f24; --line:#262a31; --ink:#f2f3f5; --muted:#9aa1ad;
+  --acc:#c8f542; --acc-ink:#0e0f11; --acc2:#7dd3fc; --r:20px;
+}
+[data-theme="light"]{
+  --bg:#f4f5f2; --panel:#ffffff; --panel2:#f7f8f4; --line:#e2e5dc; --ink:#141518; --muted:#5f6670;
+  --acc:#7cb305; --acc-ink:#ffffff; --acc2:#0369a1;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Space Grotesk",system-ui,sans-serif;font-size:16px;line-height:1.6;transition:background .3s,color .3s}
+body::before{content:"";position:fixed;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:40px 40px;opacity:.25;pointer-events:none;mask-image:radial-gradient(ellipse at top,#000 20%,transparent 70%)}
+a{color:inherit;text-decoration:none}
+.mono{font-family:"JetBrains Mono",monospace}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px;position:relative}
+
+/* top bar */
+.top{display:flex;justify-content:space-between;align-items:center;padding:22px 0}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700}
+.brand b{background:var(--acc);color:var(--acc-ink);border-radius:8px;padding:4px 8px;font-family:"JetBrains Mono",monospace;font-size:13px}
+.top nav{display:flex;gap:4px;align-items:center}
+.top nav a{font-size:14px;color:var(--muted);padding:8px 12px;border-radius:8px;transition:.2s}
+.top nav a:hover{color:var(--ink);background:var(--panel)}
+.tbtn{width:36px;height:36px;border-radius:10px;border:1px solid var(--line);background:var(--panel);color:var(--ink);cursor:pointer;display:grid;place-items:center;margin-left:6px}
+.tbtn svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round}
+
+/* bento */
+.bento{display:grid;grid-template-columns:repeat(12,1fr);gap:16px;margin-top:10px}
+.cell{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:28px;position:relative;overflow:hidden;transition:.25s}
+.cell:hover{border-color:color-mix(in srgb,var(--acc) 45%,var(--line))}
+.hero{grid-column:span 8;display:flex;flex-direction:column;justify-content:space-between;min-height:380px;background:
+  radial-gradient(600px 300px at 100% 0%,color-mix(in srgb,var(--acc) 16%,transparent),transparent 60%),var(--panel)}
+.avail{display:inline-block;max-width:100%;font-family:"JetBrains Mono",monospace;font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:6px 12px;width:max-content;line-height:1.5}
+.avail i{display:inline-block;vertical-align:middle;margin:-2px 8px 0 0;width:8px;height:8px;border-radius:50%;background:var(--acc);box-shadow:0 0 0 0 var(--acc);animation:pulse 2s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 color-mix(in srgb,var(--acc) 60%,transparent)}100%{box-shadow:0 0 0 10px transparent}}
+h1{font-size:clamp(38px,5.4vw,64px);line-height:1.02;letter-spacing:-.03em;margin:22px 0 14px;font-weight:700}
+h1 span{color:var(--acc)}
+.sub{color:var(--muted);font-size:17px;max-width:560px;margin:0 0 26px}
+.actions{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:12px;font-weight:600;font-size:14.5px;border:1px solid var(--line);background:var(--panel2);transition:.2s}
+.btn:hover{transform:translateY(-2px);border-color:var(--acc)}
+.btn.acc{background:var(--acc);color:var(--acc-ink);border-color:var(--acc)}
+.btn svg{width:16px;height:16px;fill:currentColor}
+.photo{grid-column:span 4;padding:0;min-height:380px;display:grid;place-items:center;background:linear-gradient(160deg,var(--panel2),var(--panel))}
+.photo .frame{width:100%;height:100%;min-height:380px;display:grid;place-items:center;position:relative}
+.photo .frame::before{content:"";position:absolute;inset:18px;border:1px dashed color-mix(in srgb,var(--acc) 70%,transparent);border-radius:16px;pointer-events:none;z-index:1}
+.photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 20%;border-radius:var(--r)}
+.photo .init{font-family:"JetBrains Mono",monospace;font-size:88px;font-weight:600;color:var(--acc)}
+.photo .tag{position:absolute;bottom:26px;left:26px;font-family:"JetBrains Mono",monospace;font-size:12px;color:#e8e8e8;background:rgba(14,15,17,.6);padding:4px 10px;border-radius:8px;backdrop-filter:blur(6px);z-index:1}
+.stat{grid-column:span 3;text-align:left}
+.stat b{display:block;font-size:44px;line-height:1;letter-spacing:-.03em;color:var(--acc)}
+.stat b small{font-size:22px}
+.stat span{display:block;color:var(--muted);font-size:14px;margin-top:8px}
+.stack{grid-column:span 12;padding:20px 28px;display:flex;gap:14px;align-items:center;overflow:hidden}
+.stack .lbl{font-family:"JetBrains Mono",monospace;font-size:12px;color:var(--muted);white-space:nowrap}
+.marquee{flex:1;overflow:hidden;mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.marquee div{display:flex;gap:28px;width:max-content;animation:scroll 30s linear infinite;font-family:"JetBrains Mono",monospace;font-size:14px;color:var(--muted)}
+.marquee div span::before{content:"◆ ";color:var(--acc)}
+@keyframes scroll{to{transform:translateX(-50%)}}
+
+/* sections */
+section{padding:72px 0 0}
+.sh{display:flex;align-items:baseline;gap:16px;margin-bottom:26px}
+.sh .n{font-family:"JetBrains Mono",monospace;font-size:13px;color:var(--acc)}
+.sh h2{font-size:clamp(26px,3.4vw,38px);letter-spacing:-.02em;margin:0;font-weight:700}
+.sh .line{flex:1;height:1px;background:var(--line)}
+.reveal{opacity:0;transform:translateY(18px);transition:.6s}
+.reveal.in{opacity:1;transform:none}
+
+/* experience */
+.xp{display:grid;grid-template-columns:1fr;gap:14px}
+.job{display:grid;grid-template-columns:200px 1fr;gap:24px;padding:28px}
+.job .when{font-family:"JetBrains Mono",monospace;font-size:13px;color:var(--muted)}
+.job .when b{display:block;color:var(--ink);font-weight:500;margin-bottom:4px}
+.job h3{margin:0 0 2px;font-size:20px}
+.job .co{color:var(--acc);font-weight:500;margin-bottom:14px;display:block}
+.job ul{margin:0;padding-left:18px;color:var(--muted)}
+.job li{margin-bottom:8px}
+.job li::marker{color:var(--acc)}
+.job .tags{margin-top:16px}
+.tags{display:flex;flex-wrap:wrap;gap:8px}
+.tag{font-family:"JetBrains Mono",monospace;font-size:12px;padding:5px 10px;border-radius:8px;background:var(--panel2);border:1px solid var(--line);color:var(--muted)}
+.cur{position:absolute;top:18px;right:18px;font-family:"JetBrains Mono",monospace;font-size:11px;background:var(--acc);color:var(--acc-ink);padding:4px 10px;border-radius:999px;font-weight:600}
+
+/* skills */
+.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.skill h3{margin:0 0 14px;font-size:15px;font-family:"JetBrains Mono",monospace;color:var(--acc);font-weight:500}
+.bar{margin-bottom:12px}
+.bar div{display:flex;justify-content:space-between;font-size:14px;margin-bottom:6px}
+.bar div span:last-child{font-family:"JetBrains Mono",monospace;font-size:12px;color:var(--muted)}
+.bar i{display:block;height:6px;border-radius:99px;background:var(--panel2);overflow:hidden}
+.bar i::after{content:"";display:block;height:100%;width:0;background:linear-gradient(90deg,var(--acc),var(--acc2));border-radius:99px;transition:width 1.2s cubic-bezier(.2,.8,.2,1)}
+.in .bar i::after{width:var(--w)}
+
+/* projects */
+.projects{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.proj{display:flex;flex-direction:column;gap:12px;min-height:250px}
+.proj .ic{width:44px;height:44px;border-radius:12px;background:var(--panel2);border:1px solid var(--line);display:grid;place-items:center;color:var(--acc)}
+.proj .ic svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.proj h3{margin:4px 0 0;font-size:18px}
+.proj p{margin:0;color:var(--muted);font-size:14.5px;flex:1}
+.proj.wide{grid-column:span 2}
+.proj .k{font-family:"JetBrains Mono",monospace;font-size:12px;color:var(--acc)}
+
+/* edu + contact */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.edu h3{margin:0 0 4px;font-size:18px}
+.edu p{margin:0;color:var(--muted);font-size:14.5px}
+.edu .yr{font-family:"JetBrains Mono",monospace;font-size:12px;color:var(--acc);margin-bottom:10px;display:block}
+.contact{margin-top:72px;padding:56px 40px;text-align:center;background:
+  radial-gradient(500px 250px at 50% 0%,color-mix(in srgb,var(--acc) 18%,transparent),transparent 70%),var(--panel)}
+.contact h2{font-size:clamp(30px,4.5vw,50px);letter-spacing:-.03em;margin:0 0 10px}
+.contact p{color:var(--muted);max-width:520px;margin:0 auto 26px}
+.contact .actions{justify-content:center}
+footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;padding:28px 0 40px;font-family:"JetBrains Mono",monospace;font-size:12px;color:var(--muted)}
+.copy{cursor:pointer}
+
+@media (max-width:900px){
+  .hero,.photo{grid-column:span 12}.photo{min-height:260px}.photo .frame{min-height:260px}
+  .stat{grid-column:span 6}
+  .skills,.projects{grid-template-columns:1fr 1fr}.proj.wide{grid-column:span 2}
+}
+@media (max-width:640px){
+  .top nav a:not(.keep){display:none}
+  .stat{grid-column:span 6}.stat b{font-size:34px}
+  .job{grid-template-columns:1fr;gap:10px;padding:22px}
+  .skills,.projects,.two{grid-template-columns:1fr}.proj.wide{grid-column:span 1}
+  .cell{padding:22px}.contact{padding:40px 22px}
+  .stack{display:none}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="top">
+  <a class="brand" href="#"><b>EJ</b>Esrat Jahan</a>
+  <nav>
+    <a href="#experience">Experience</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#education">Education</a>
+    <a class="keep" href="#contact" style="color:var(--acc)">Contact</a>
+    <button class="tbtn" id="theme" aria-label="Toggle theme"><svg viewBox="0 0 24 24"><path id="ticon" d="M12 4v2M12 18v2M4 12h2M18 12h2M6.3 6.3l1.4 1.4M16.3 16.3l1.4 1.4M6.3 17.7l1.4-1.4M16.3 7.7l1.4-1.4M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8z"/></svg></button>
+  </nav>
+</div>
+
+<div class="bento">
+  <div class="cell hero">
+    <div>
+      <span class="avail"><i></i>Open to senior backend / full-stack roles</span>
+      <h1>Backend engineer who ships <span>reliable</span> enterprise systems.</h1>
+      <p class="sub">Senior Software Engineer with 3+ years building Laravel/PHP applications on Oracle for insurance — policy administration, claims, settlements and reporting at production scale. Python and ML on the side.</p>
+    </div>
+    <div class="actions">
+      <a class="btn acc" href="#contact">Get in touch</a>
+      <a class="btn" href="Esrat_Jahan_CV.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" style="fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round"><path d="M12 3v11m0 0l-4-4m4 4l4-4M4 17v3h16v-3"/></svg>Download CV</a>
+      <a class="btn" href="https://github.com/esrat-jahan01097" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.4-4-1.4-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.9 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.7 1.7.3 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .5z"/></svg>GitHub</a>
+      <a class="btn" href="https://www.linkedin.com/in/israt-momi-8a3146169/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM10 9h3.8v1.7c.5-1 1.9-2 3.9-2 4.1 0 4.3 2.7 4.3 6.2V21h-4v-5.4c0-1.3 0-3-1.9-3s-2.1 1.4-2.1 2.9V21h-4z"/></svg>LinkedIn</a>
+    </div>
+  </div>
+  <div class="cell photo"><div class="frame">
+    <img src="photo.jpg" alt="Esrat Jahan">
+    <span class="tag">// Dhaka, Bangladesh</span>
+  </div></div>
+
+  <div class="cell stat"><b>3<small>+</small></b><span>years in production engineering</span></div>
+  <div class="cell stat"><b>3</b><span>companies · insurance, events, web</span></div>
+  <div class="cell stat"><b>10<small>+</small></b><span>Laravel systems built or maintained</span></div>
+  <div class="cell stat"><b>2</b><span>degrees · BSc SWE (3.90) · MSc Data Science</span></div>
+
+  <div class="cell stack"><span class="lbl">STACK</span><div class="marquee"><div id="mq"></div></div></div>
+</div>
+
+<section id="experience">
+  <div class="sh reveal"><span class="n">01</span><h2>Experience</h2><span class="line"></span></div>
+  <div class="xp">
+    <div class="cell job reveal">
+      <span class="cur">CURRENT</span>
+      <div class="when"><b>Dec 2022 — Present</b>Dhaka, Bangladesh</div>
+      <div>
+        <h3>Senior Software Engineer</h3>
+        <span class="co">Guardian Life Insurance Limited</span>
+        <ul>
+          <li>Own and maintain enterprise Laravel applications for policy administration and claims workflows, backed by Oracle databases holding millions of policy and claims records.</li>
+          <li>Redesigned the bulk claim-settlement pipeline into a queued job with retry logic, a failed-settlements table and a scheduled retry command, removing manual re-runs from operations.</li>
+          <li>Built micro-insurance invoice generation on Oracle stored procedures (PL/SQL) with conditional organisation parameters and Blade-side reporting.</li>
+          <li>Led migrations of legacy modules to current Laravel releases, improving performance and maintainability; debugged production Oracle issues (NLS date handling, ORA errors, PL/SQL object state).</li>
+          <li>Wrote sales-contest, producer-hierarchy and claims lead-time analytics in Oracle SQL; built a Python job-monitoring integration for Oracle batch jobs.</li>
+          <li>Partner with business and operations teams on requirements, approval flows and production deployments.</li>
+        </ul>
+        <div class="tags"><span class="tag">Laravel</span><span class="tag">PHP</span><span class="tag">Oracle</span><span class="tag">PL/SQL</span><span class="tag">Queues &amp; Jobs</span><span class="tag">Python</span><span class="tag">Docker</span><span class="tag">Git</span></div>
+      </div>
+    </div>
+    <div class="cell job reveal">
+      <div class="when"><b>May 2022 — Nov 2022</b>Dhaka, Bangladesh</div>
+      <div>
+        <h3>Laravel Developer</h3>
+        <span class="co">CEMS-Global</span>
+        <ul>
+          <li>Built dynamic web systems for the company's ongoing and upcoming exhibitions and events.</li>
+          <li>Handled high-volume, simultaneous user registrations with reliable form processing and data validation.</li>
+        </ul>
+        <div class="tags"><span class="tag">Laravel</span><span class="tag">MySQL</span><span class="tag">jQuery</span><span class="tag">Bootstrap</span></div>
+      </div>
+    </div>
+    <div class="cell job reveal">
+      <div class="when"><b>Feb 2022 — Apr 2022</b>Dhaka, Bangladesh</div>
+      <div>
+        <h3>Web Developer Intern</h3>
+        <span class="co">Sylloo Innovation</span>
+        <ul>
+          <li>Developed and maintained web application features; first professional experience with Laravel, Git workflows and client requirements.</li>
+        </ul>
+        <div class="tags"><span class="tag">PHP</span><span class="tag">Laravel</span><span class="tag">JavaScript</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="sh reveal"><span class="n">02</span><h2>Skills</h2><span class="line"></span></div>
+  <div class="skills">
+    <div class="cell skill reveal">
+      <h3>// backend</h3>
+      <div class="bar"><div><span>PHP · Laravel</span><span>expert</span></div><i style="--w:94%"></i></div>
+      <div class="bar"><div><span>Oracle SQL · PL/SQL</span><span>advanced</span></div><i style="--w:88%"></i></div>
+      <div class="bar"><div><span>MySQL</span><span>advanced</span></div><i style="--w:80%"></i></div>
+      <div class="bar"><div><span>Python · Django</span><span>proficient</span></div><i style="--w:70%"></i></div>
+      <div class="bar"><div><span>Java · C#</span><span>working</span></div><i style="--w:50%"></i></div>
+    </div>
+    <div class="cell skill reveal">
+      <h3>// frontend &amp; tooling</h3>
+      <div class="bar"><div><span>HTML · CSS · JavaScript</span><span>advanced</span></div><i style="--w:82%"></i></div>
+      <div class="bar"><div><span>Vue.js · Livewire · jQuery</span><span>proficient</span></div><i style="--w:70%"></i></div>
+      <div class="bar"><div><span>Docker · Git · GitLab</span><span>advanced</span></div><i style="--w:80%"></i></div>
+      <div class="bar"><div><span>Postman · Laravel Herd · PhpStorm</span><span>daily</span></div><i style="--w:85%"></i></div>
+      <div class="bar"><div><span>Linux · Windows</span><span>daily</span></div><i style="--w:78%"></i></div>
+    </div>
+    <div class="cell skill reveal">
+      <h3>// data &amp; ML</h3>
+      <div class="bar"><div><span>NumPy · Pandas · Scikit-learn</span><span>proficient</span></div><i style="--w:75%"></i></div>
+      <div class="bar"><div><span>Deep learning (CNNs, PyTorch)</span><span>proficient</span></div><i style="--w:68%"></i></div>
+      <div class="bar"><div><span>NLP (NLTK, transformers)</span><span>working</span></div><i style="--w:55%"></i></div>
+      <div class="bar"><div><span>Data analysis &amp; reporting SQL</span><span>advanced</span></div><i style="--w:86%"></i></div>
+      <div class="bar"><div><span>Requirement analysis · teamwork</span><span>strong</span></div><i style="--w:90%"></i></div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="sh reveal"><span class="n">03</span><h2>Selected work</h2><span class="line"></span></div>
+  <div class="projects">
+    <div class="cell proj reveal">
+      <div class="ic"><svg viewBox="0 0 24 24"><path d="M4 7h16v13H4zM4 7l2-3h12l2 3M9 12h6"/></svg></div>
+      <span class="k">enterprise · insurance</span>
+      <h3>Claims &amp; settlement platform</h3>
+      <p>Laravel + Oracle system handling claim intake, multi-step approvals and bulk settlements for a national life insurer. Rebuilt the settlement path as a fault-tolerant queued job with retries and failure tracking; wrote the analytics behind claims lead-time reporting.</p>
+      <div class="tags"><span class="tag">Laravel</span><span class="tag">Oracle</span><span class="tag">Queues</span><span class="tag">PL/SQL</span></div>
+    </div>
+    <div class="cell proj reveal">
+      <div class="ic"><svg viewBox="0 0 24 24"><path d="M6 3h9l5 5v13H6zM14 3v6h6M9 14h6M9 17h6"/></svg></div>
+      <span class="k">enterprise · micro-insurance</span>
+      <h3>Micro-invoice generation</h3>
+      <p>Invoice engine on Oracle stored procedures with organisation-specific parameters, surfaced through Laravel with session-flashed results for finance teams.</p>
+      <div class="tags"><span class="tag">PL/SQL</span><span class="tag">Laravel</span></div>
+    </div>
+    <div class="cell proj reveal">
+      <div class="ic"><svg viewBox="0 0 24 24"><path d="M4 19V5M4 19h16M8 15l4-6 4 3 4-6"/></svg></div>
+      <span class="k">analytics · reporting</span>
+      <h3>Sales-contest &amp; producer reporting</h3>
+      <p>Oracle SQL reporting for sales contests — NCP calculations, prize tiers and producer-hierarchy lookups — plus data-reconciliation queries across schemas.</p>
+      <div class="tags"><span class="tag">Oracle SQL</span><span class="tag">Reporting</span></div>
+    </div>
+    <div class="cell proj reveal">
+      <div class="ic"><svg viewBox="0 0 24 24"><path d="M12 3l9 5-9 5-9-5zM3 13l9 5 9-5"/></svg></div>
+      <span class="k">python · ops</span>
+      <h3>Oracle job monitoring</h3>
+      <p>Python integration that logs and retries Oracle batch jobs with bind variables and RETURNING INTO; audited and fixed 19 bugs across two script versions.</p>
+      <div class="tags"><span class="tag">Python</span><span class="tag">oracledb</span></div>
+    </div>
+    <div class="cell proj reveal">
+      <div class="ic"><svg viewBox="0 0 24 24"><path d="M3 5h18v14H3zM3 10h18M8 5v14"/></svg></div>
+      <span class="k">web · laravel</span>
+      <h3>E-commerce, job portal &amp; CMS builds</h3>
+      <p>Multiple Laravel applications — e-commerce, job portal, blog platform and management systems — with auth, role-based access, CRUD and relational data design.</p>
+      <div class="tags"><span class="tag">Laravel</span><span class="tag">MySQL</span><span class="tag">Vue</span></div>
+    </div>
+    <div class="cell proj reveal">
+      <div class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="3"/><circle cx="12" cy="12" r="3.5"/></svg></div>
+      <span class="k">machine learning</span>
+      <h3>Food image recognition (MSc)</h3>
+      <p>ResNet-50 classifier with continual-learning techniques and Grad-CAM explanations, extended to Bangladeshi cuisine; plus medical-prediction ML projects.</p>
+      <div class="tags"><span class="tag">PyTorch</span><span class="tag">CNN</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="sh reveal"><span class="n">04</span><h2>Education &amp; training</h2><span class="line"></span></div>
+  <div class="two">
+    <div class="cell edu reveal"><span class="yr">2024 — 2026 (expected)</span><h3>MSc in Data Science</h3><p>United International University · CGPA 3.67 / 4.00 (current)</p></div>
+    <div class="cell edu reveal"><span class="yr">2017 — 2021</span><h3>BSc in Software Engineering</h3><p>Daffodil International University · CGPA 3.90 / 4.00</p></div>
+    <div class="cell edu reveal"><span class="yr">training</span><h3>PHP with Laravel Framework</h3><p>SEIP training · BASIS Institute of Technology &amp; Management (BITM)</p></div>
+    <div class="cell edu reveal"><span class="yr">certificate</span><h3>Natural Language Processing Specialization</h3><p>DeepLearning.AI · Coursera</p></div>
+  </div>
+</section>
+
+<div class="cell contact reveal" id="contact">
+  <h2>Let's build something.</h2>
+  <p>Available for senior backend or full-stack roles. Fastest way to reach me is email — I reply within a day.</p>
+  <div class="actions">
+    <a class="btn acc" href="mailto:momijahan776@gmail.com">momijahan776@gmail.com</a>
+    <button class="btn copy" id="copy">Copy email</button>
+    <a class="btn" href="https://www.linkedin.com/in/israt-momi-8a3146169/" target="_blank" rel="noopener">LinkedIn</a>
+  </div>
+</div>
+
+<footer><span>© <span id="y"></span> Esrat Jahan</span><span>+880 1797 726396 · Dhaka, Bangladesh</span></footer>
+</div>
+
+<script>
+const root=document.documentElement,ti=document.getElementById('ticon');
+const SUN="M12 4v2M12 18v2M4 12h2M18 12h2M6.3 6.3l1.4 1.4M16.3 16.3l1.4 1.4M6.3 17.7l1.4-1.4M16.3 7.7l1.4-1.4M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8z",MOON="M12 3a9 9 0 1 0 9 9c0-.5 0-1-.1-1.4A5.5 5.5 0 0 1 12 3z";
+function setTheme(t){root.setAttribute('data-theme',t);ti.setAttribute('d',t==='dark'?SUN:MOON);try{localStorage.setItem('theme2',t)}catch(e){}}
+let s=null;try{s=localStorage.getItem('theme2')}catch(e){}
+setTheme(s||'dark');
+document.getElementById('theme').onclick=()=>setTheme(root.getAttribute('data-theme')==='dark'?'light':'dark');
+
+const stack=['PHP','Laravel','Oracle','PL/SQL','MySQL','Python','Django','Vue.js','Livewire','JavaScript','jQuery','Docker','Git','GitLab','Postman','Linux','Pandas','Scikit-learn','PyTorch'];
+document.getElementById('mq').innerHTML=[...stack,...stack].map(x=>`<span>${x}</span>`).join('');
+
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+const cp=document.getElementById('copy');cp.onclick=async()=>{try{await navigator.clipboard.writeText('momijahan776@gmail.com');cp.textContent='Copied ✓';setTimeout(()=>cp.textContent='Copy email',1800)}catch(e){}};
+document.getElementById('y').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
